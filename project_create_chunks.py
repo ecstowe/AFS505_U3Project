@@ -4,6 +4,7 @@ from Bio.SeqRecord import SeqRecord
 path = '/data/ficklin_class/AFS505/course_material/data/all.pep'
 chunk_number = 10
 records = list(SeqIO.parse(path, "fasta"))
+print(records) 
 chunk_size = sum(len(r) for r in records) // chunk_number + 1
 
 
@@ -17,7 +18,7 @@ def create_batch(records, chunk_size):
 	batch_size = 0
 
 	while record:
-        # Loop over records untill the batch is full. (or no new records)
+        # Loop over records untill the batch is full or there are no new records. 
 		while batch_size != chunk_size and record:
 
 			end = current_base + chunk_size - batch_size
@@ -37,11 +38,12 @@ def create_batch(records, chunk_size):
 				record = next(record_it, None)
 				current_base = 0
 
-        # We have a batch with the correct size (or no new bathces)
+        # We have a batch with the correct size or there are no new batches.
 		yield batch
 		batch = []
 		batch_size = 0
-
+		
+#create files for each batch 
 chunked_files = []
 for i, batch in enumerate(create_batch(records, chunk_size)):
 	filename = "chunk{}.fasta".format(i)
