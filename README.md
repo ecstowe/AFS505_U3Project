@@ -1,6 +1,6 @@
 # AFS 505 Unit 3 Project README
 ## Overview
-This workflow executes a split BLAST job on Washington State University’s ‘Kamiak’ HPC and as such assumes the user is familiar with basic command line interface. This workflow requires a .fasta file and a database to BLAST the query against. Necessary software includes: *Python* 3.0 or greater and *Anaconda3*, both available on Kamiak.  A total of three (3) scripts are needed to execute this workflow. An overview of the workflow is as follows: 
+This workflow executes a split BLAST job on Washington State University’s ‘Kamiak’ HPC and as such assumes the user is familiar with basic command line interface. This workflow requires a .fasta file and a database to BLAST the query against. Necessary software includes: *Python* 3 or greater and *Anaconda3*, both available on Kamiak.  A total of three (3) scripts are needed to execute this workflow. An overview of the workflow is as follows: 
 #### Step 1
 - Split a large .fasta file into ten (10) equal sized ‘chunks’ with the python script     `project_create_chunks.py`. 
 #### Step 2
